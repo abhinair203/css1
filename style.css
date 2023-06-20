@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Additional custom web font */
+
+/* Universal */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f4f4f4;
+    font-family: 'Montserrat', sans-serif; /* Custom web font */
+    color: #333;
+    line-height: 1.6;
+}
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif; /* Additional custom web font */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Navigation */
+#design-selection nav ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#design-selection nav ul li {
+    flex: 1;
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    margin-right: 10px;
+    text-align: center;
+    transition: transform .3s ease;
+}
+
+#design-selection nav ul li:last-child {
+    margin-right: 0;
+}
+
+#design-selection nav ul li:hover {
+    transform: scale(1.05);
+}
+
+#design-selection nav ul li:first-child + li {
+    background-color: #555; /* Direct sibling combinator example */
+}
+/* Header */
+#zen-intro {
+    background: linear-gradient(to bottom right, #3f87a6, #ebf8e1, #f69d3c);
+    padding: 60px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#zen-intro h1 {
+    margin-bottom: 0;
+}
+
+/* Main Section */
+#zen-supporting {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+#zen-supporting .explanation,
+#zen-supporting .participation,
+#zen-supporting .benefits,
+#zen-supporting .requirements {
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    transition: box-shadow .3s ease;
+}
+
+#zen-supporting .explanation:hover,
+#zen-supporting .participation:hover,
+#zen-supporting .benefits:hover,
+#zen-supporting .requirements:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    margin: 10px;
+    transition: color .3s ease;
+}
+
+footer a:hover {
+    color: #f69d3c;
+}
+
+footer .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+footer .footer-nav ul {
+    list-style: none;
+    padding: 10px;
+}
+
+footer .footer-nav ul li {
+    padding: 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    footer .footer-nav {
+        flex-direction: column;
+    }
+}
+
+/* Animations */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+footer .zen-github:hover {
+    animation: spin 2s linear infinite;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    #zen-supporting {
+        grid-template-columns: 1fr;
+    }
+
+    #design-selection nav ul {
+        flex-direction: column;
+    }
+
+    #design-selection nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+p.white-text {
+    color: #fff;
+}
+
+/* Attribute selector example */
+a[href^="http"] {
+    background-color: #ddd;
+}
+
+/* General sibling combinator example */
+h1 ~ p {
+    color: #888;
+}
